@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Kezdőlap",
+    "introduction": "Bemutatkozás",
+    "hobbies": "Hobbik",
+    "languages": "Nyelvek",
+    "certificates": "Tanúsítványok",
+    "skills": "Készségek",
+    "education": "Oktatás",
+    "experience": "Munkatapasztalat"
+  },
+  "intro": {
+    "title": "Szia, Pukánszky Péter vagyok",
+    "subtitle": "Full-Stack Fejlesztő",
+    "description": "Szenvedélyesen foglalkozom innovatív web megoldások létrehozásával és ötletek életre keltésével kód segítségével."
+  },
+  "hobbies": {
+    "title": "Hobbik",
+    "items": [
+      "Személyes projektek kódolása",
+      "Tech blogok olvasása",
+      "Túra a természetben",
+      "Gitározás"
+    ]
+  },
+  "languages": {
+    "title": "Programozási Nyelvek",
+    "items": [
+      { "name": "JavaScript", "level": "Haladó" },
+      { "name": "TypeScript", "level": "Haladó" },
+      { "name": "Python", "level": "Középhaladó" },
+      { "name": "Java", "level": "Kezdő" }
+    ]
+  },
+  "certificates": {
+    "title": "Tanúsítványok",
+    "items": [
+      {
+        "name": "AWS Certified Developer",
+        "issuer": "Amazon Web Services",
+        "year": "2023"
+      },
+      {
+        "name": "React Developer Certification",
+        "issuer": "Meta",
+        "year": "2022"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Készségek",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Eszközök és Technológiák",
+    "frontendItems": [
+      "React",
+      "Vue.js",
+      "Angular",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS"
+    ],
+    "backendItems": ["Node.js", "Express", "Django", "PostgreSQL", "MongoDB"],
+    "toolsItems": ["Git", "Docker", "AWS", "VS Code", "Figma"]
+  },
+  "education": {
+    "title": "Oktatás",
+    "items": [
+      {
+        "degree": "Számítástechnikai BSc",
+        "school": "Példa Egyetem",
+        "year": "2018-2022"
+      },
+      {
+        "degree": "Érettségi",
+        "school": "Példa Gimnázium",
+        "year": "2014-2018"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Munkatapasztalat",
+    "items": [
+      {
+        "position": "Senior Full-Stack Fejlesztő",
+        "company": "Tech Corp",
+        "period": "2022-Jelenleg",
+        "description": "Modern technológiák használatával vezetem a webalkalmazások fejlesztését."
+      },
+      {
+        "position": "Junior Fejlesztő",
+        "company": "Startup Inc",
+        "period": "2020-2022",
+        "description": "Kliens-oldali alkalmazások fejlesztése és karbantartása."
+      }
+    ]
+  },
+  "theme": {
+    "toggle": "Téma váltás"
+  }
+}

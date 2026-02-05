@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "introduction": "Einführung",
+    "hobbies": "Hobbys",
+    "languages": "Sprachen",
+    "certificates": "Zertifikate",
+    "skills": "Fähigkeiten",
+    "education": "Bildung",
+    "experience": "Berufserfahrung"
+  },
+  "intro": {
+    "title": "Hallo, ich bin Péter Pukánszky",
+    "subtitle": "Full-Stack Entwickler",
+    "description": "Leidenschaftlich dabei, innovative Weblösungen zu schaffen und Ideen durch Code zum Leben zu erwecken."
+  },
+  "hobbies": {
+    "title": "Hobbys",
+    "items": [
+      "Persönliche Projekte programmieren",
+      "Tech-Blogs lesen",
+      "Wandern in der Natur",
+      "Gitarre spielen"
+    ]
+  },
+  "languages": {
+    "title": "Programmiersprachen",
+    "items": [
+      { "name": "JavaScript", "level": "Fortgeschritten" },
+      { "name": "TypeScript", "level": "Fortgeschritten" },
+      { "name": "Python", "level": "Mittelstufe" },
+      { "name": "Java", "level": "Anfänger" }
+    ]
+  },
+  "certificates": {
+    "title": "Zertifikate",
+    "items": [
+      {
+        "name": "AWS Certified Developer",
+        "issuer": "Amazon Web Services",
+        "year": "2023"
+      },
+      {
+        "name": "React Developer Certification",
+        "issuer": "Meta",
+        "year": "2022"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Fähigkeiten",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Technologien",
+    "frontendItems": [
+      "React",
+      "Vue.js",
+      "Angular",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS"
+    ],
+    "backendItems": ["Node.js", "Express", "Django", "PostgreSQL", "MongoDB"],
+    "toolsItems": ["Git", "Docker", "AWS", "VS Code", "Figma"]
+  },
+  "education": {
+    "title": "Bildung",
+    "items": [
+      {
+        "degree": "Bachelor in Informatik",
+        "school": "Universität Beispiel",
+        "year": "2018-2022"
+      },
+      {
+        "degree": "Abitur",
+        "school": "Beispiel Gymnasium",
+        "year": "2014-2018"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "items": [
+      {
+        "position": "Senior Full-Stack Entwickler",
+        "company": "Tech Corp",
+        "period": "2022-Gegenwart",
+        "description": "Führung der Entwicklung von Webanwendungen mit modernen Technologien."
+      },
+      {
+        "position": "Junior Entwickler",
+        "company": "Startup Inc",
+        "period": "2020-2022",
+        "description": "Entwicklung und Wartung von clientseitigen Anwendungen."
+      }
+    ]
+  },
+  "theme": {
+    "toggle": "Thema umschalten"
+  }
+}

@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl } from "../utils/i18n";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl } from "../../utils/i18n";
 
 const lang = getLangFromUrl(Astro.url);
-const t = await import(`../i18n/${lang}.json`).then((m) => m.default);
+const t = await import(`../../i18n/${lang}.json`).then((m) => m.default);
 ---
 
 <Layout>
@@ -234,7 +234,7 @@ const t = await import(`../i18n/${lang}.json`).then((m) => m.default);
         {
           t.experience.items.map((exp: any, index: number) => (
             <div
-              class={`bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-lg animate-fade-in-delay-${index + 1}`}
+              class={`bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg animate-fade-in-delay-${index + 1}`}
             >
               <h3 class="text-xl font-semibold text-secondary mb-2">
                 {exp.position}
