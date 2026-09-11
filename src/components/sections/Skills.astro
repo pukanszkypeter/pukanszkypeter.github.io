@@ -1,0 +1,187 @@
+---
+type Tier = 'core' | 'familiar';
+
+const groups: { key: string; label: string; skills: { name: string; tier: Tier }[] }[] = [
+	{
+		key: 'aiTools',
+		label: 'AI Tools',
+		skills: [
+			{ name: 'Claude Code', tier: 'familiar' },
+			{ name: 'GitHub Copilot', tier: 'core' },
+		],
+	},
+	{
+		key: 'languages',
+		label: 'Languages',
+		skills: [
+			{ name: 'Java', tier: 'core' },
+			{ name: 'TypeScript', tier: 'core' },
+			{ name: 'Python', tier: 'familiar' },
+		],
+	},
+	{
+		key: 'frameworks',
+		label: 'Frameworks & Libraries',
+		skills: [
+			{ name: 'Spring Boot', tier: 'core' },
+			{ name: 'React', tier: 'core' },
+			{ name: 'Angular', tier: 'familiar' },
+		],
+	},
+	{
+		key: 'architecture',
+		label: 'Architecture & APIs',
+		skills: [
+			{ name: 'Microservices', tier: 'core' },
+			{ name: 'API Design', tier: 'core' },
+		],
+	},
+	{
+		key: 'databases',
+		label: 'Databases',
+		skills: [
+			{ name: 'MySQL', tier: 'core' },
+			{ name: 'MongoDB', tier: 'core' },
+			{ name: 'MSSQL', tier: 'familiar' },
+		],
+	},
+	{
+		key: 'devops',
+		label: 'DevOps & Infrastructure',
+		skills: [
+			{ name: 'Docker', tier: 'core' },
+			{ name: 'Kubernetes', tier: 'core' },
+			{ name: 'GitHub', tier: 'core' },
+			{ name: 'Kafka', tier: 'core' },
+			{ name: 'Keycloak', tier: 'core' },
+			{ name: 'Linux', tier: 'familiar' },
+			{ name: 'Prometheus', tier: 'familiar' },
+			{ name: 'Grafana', tier: 'familiar' },
+		],
+	},
+	{
+		key: 'testing',
+		label: 'Testing',
+		skills: [
+			{ name: 'JUnit', tier: 'familiar' },
+			{ name: 'Jest', tier: 'familiar' },
+			{ name: 'Playwright', tier: 'familiar' },
+			{ name: 'Vitest', tier: 'familiar' },
+		],
+	},
+];
+
+const certifications = [{ name: 'Reinvention with Agentic AI — Accenture', url: '#' }];
+
+const coreBadge = 'rounded-full bg-accent-subtle px-2.5 py-1 text-xs text-accent';
+const familiarBadge = 'rounded-full border border-border px-2.5 py-1 text-xs text-muted';
+---
+
+<section id="skills" class="scroll-mt-16 snap-start flex h-[calc(100vh-4rem)] items-center bg-surface px-4">
+	<div class="mx-auto flex h-full max-h-full w-full max-w-3xl flex-col justify-center py-6">
+		<div class="flex-shrink-0">
+			<h2 class="text-2xl font-semibold text-ink" data-i18n="skills.heading">Skills</h2>
+
+			<div class="mt-3 flex items-center gap-4 text-xs text-muted">
+				<span class="flex items-center gap-1.5">
+					<span class="h-2 w-2 rounded-full bg-accent-subtle border border-accent/40" />
+					<span data-i18n="skills.core">Core</span>
+				</span>
+				<span class="flex items-center gap-1.5">
+					<span class="h-2 w-2 rounded-full border border-border" />
+					<span data-i18n="skills.familiar">Familiar with</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="mt-2 flex justify-center">
+			<button
+				type="button"
+				id="skills-scroll-up"
+				aria-label="Scroll up"
+				class="flex h-8 w-8 items-center justify-center rounded-full border border-border text-ink transition-colors hover:border-accent hover:text-accent disabled:pointer-events-none disabled:opacity-30"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+				</svg>
+			</button>
+		</div>
+
+		<div id="skills-list" class="mt-2 max-h-[58vh] space-y-4 overflow-y-auto pb-2">
+			{
+				groups.map((group) => (
+					<div>
+						<h3 class="text-sm font-medium text-muted" data-i18n={`skills.groups.${group.key}`}>{group.label}</h3>
+						<div class="mt-2 flex flex-wrap gap-1.5">
+							{[...group.skills]
+								.sort((a, b) => (a.tier === b.tier ? 0 : a.tier === 'core' ? -1 : 1))
+								.map((skill) => (
+									<span class={skill.tier === 'core' ? coreBadge : familiarBadge}>{skill.name}</span>
+								))}
+						</div>
+					</div>
+				))
+			}
+
+			<div>
+				<h3 class="text-sm font-medium text-muted" data-i18n="skills.certifications">Certifications</h3>
+				<div class="mt-2 flex flex-wrap gap-1.5">
+					{
+						certifications.map((cert) => (
+							<a
+								href={cert.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+							>
+								{cert.name}
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3 w-3 flex-shrink-0">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M10 14L21 3" />
+								</svg>
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-2 flex justify-center">
+			<button
+				type="button"
+				id="skills-scroll-down"
+				aria-label="Scroll down"
+				class="flex h-8 w-8 items-center justify-center rounded-full border border-border text-ink transition-colors hover:border-accent hover:text-accent disabled:pointer-events-none disabled:opacity-30"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+				</svg>
+			</button>
+		</div>
+	</div>
+</section>
+
+<script>
+	const list = document.getElementById('skills-list');
+	const scrollUp = document.getElementById('skills-scroll-up') as HTMLButtonElement | null;
+	const scrollDown = document.getElementById('skills-scroll-down') as HTMLButtonElement | null;
+
+	const scrollList = (direction: 1 | -1) => {
+		list?.scrollBy({ top: direction * 150, behavior: 'smooth' });
+	};
+
+	scrollUp?.addEventListener('click', () => scrollList(-1));
+	scrollDown?.addEventListener('click', () => scrollList(1));
+
+	const updateSkillsArrows = () => {
+		if (!list || !scrollUp || !scrollDown) return;
+		const maxScroll = list.scrollHeight - list.clientHeight;
+		scrollUp.disabled = list.scrollTop <= 1;
+		scrollDown.disabled = list.scrollTop >= maxScroll - 1;
+	};
+
+	list?.addEventListener('scroll', updateSkillsArrows, { passive: true });
+	window.addEventListener('resize', updateSkillsArrows);
+	updateSkillsArrows();
+</script>

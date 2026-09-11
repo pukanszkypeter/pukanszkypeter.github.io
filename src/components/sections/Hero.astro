@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import profile from '../../assets/profile.jpg';
+---
+
+<section id="home" class="scroll-mt-16 snap-start flex min-h-[calc(100vh-4rem)] items-center bg-bg px-4">
+	<div class="mx-auto max-w-3xl text-center">
+		<Image
+			src={profile}
+			alt="Pukánszky Péter"
+			width={320}
+			height={480}
+			quality={90}
+			class="mx-auto h-40 w-40 rounded-full border border-border object-cover object-[center_15%] transition-transform duration-300 hover:scale-110"
+		/>
+
+		<h1 class="mt-6 text-4xl font-bold text-ink sm:text-5xl">Pukánszky Péter</h1>
+		<p class="mt-3 text-lg text-accent" data-i18n="hero.tagline">Software Engineer</p>
+		<p class="mx-auto mt-6 max-w-xl text-muted" data-i18n="hero.blurb">
+			Software engineer at Accenture Hungary, using AI tooling to drive full-cycle delivery —
+			from technical decisions to translating business needs into working software.
+		</p>
+
+		<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+			<a
+				href="#projects"
+				class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+				data-i18n="hero.viewProjects"
+			>
+				View Projects
+			</a>
+			<a
+				href="#contact"
+				class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+				data-i18n="hero.contactMe"
+			>
+				Contact Me
+			</a>
+		</div>
+	</div>
+</section>

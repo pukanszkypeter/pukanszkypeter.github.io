@@ -1,0 +1,54 @@
+---
+const entries = [
+  {
+    role: "Software Engineer",
+    org: "Accenture Hungary",
+    location: "Budapest, Hungary",
+    dates: "September 2022 – Present",
+    description:
+      "Full-cycle, full-stack development of warehouse logistics software in an agile environment.",
+  },
+  {
+    role: "Java Software Developer",
+    org: "Citi",
+    location: "Budapest, Hungary",
+    dates: "June 2022 – September 2022",
+    description: "Java maintenance of financial software.",
+  },
+  {
+    role: "Software Developer",
+    org: "Systemathx Hungary Zrt.",
+    location: "Budapest, Hungary",
+    dates: "March 2021 – June 2022",
+    description:
+      "Comprehensive (full-stack) implementation of in-factory decision-support software and logistics processes.",
+  },
+];
+---
+
+<section
+  id="experience"
+  class="scroll-mt-16 snap-start flex min-h-[calc(100vh-4rem)] items-center bg-bg px-4"
+>
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-2xl font-semibold text-ink" data-i18n="experience.heading">Experience</h2>
+
+    <div class="mt-8 space-y-8">
+      {
+        entries.map((entry, i) => (
+          <div class="border-l-2 border-accent/30 pl-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-semibold text-ink">
+                <span data-i18n={`experience.entries.${i}.role`}>{entry.role}</span>{" "}
+                <span class="font-normal text-muted">· {entry.org}</span>
+              </h3>
+              <span class="text-sm text-muted" data-i18n={`experience.entries.${i}.dates`}>{entry.dates}</span>
+            </div>
+            <p class="text-sm text-muted" data-i18n={`experience.entries.${i}.location`}>{entry.location}</p>
+            <p class="mt-2 text-sm text-muted" data-i18n={`experience.entries.${i}.description`}>{entry.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

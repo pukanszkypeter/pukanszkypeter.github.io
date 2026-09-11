@@ -1,0 +1,43 @@
+---
+const entries = [
+	{
+		degree: "Master's degree, Computer Science",
+		org: 'Eötvös Loránd University',
+		dates: 'September 2021 – June 2023',
+		description:
+			'Thesis on researching various mobile robot dispersion algorithms, presenting the results and simulations through a web application.',
+	},
+	{
+		degree: "Bachelor's degree, Computer Science",
+		org: 'Eötvös Loránd University',
+		dates: 'September 2018 – June 2021',
+		description:
+			'Thesis on developing a web application to compare and present sentiment analysis results from Python and SAP.',
+	},
+];
+---
+
+<section id="education" class="scroll-mt-16 snap-start flex min-h-[calc(100vh-4rem)] items-center bg-surface px-4">
+	<div class="mx-auto max-w-3xl">
+		<h2 class="text-2xl font-semibold text-ink" data-i18n="education.heading">Education</h2>
+
+		<div class="mt-8 space-y-8">
+			{
+				entries.map((entry, i) => (
+					<div class="border-l-2 border-accent/30 pl-6">
+						<div class="flex flex-wrap items-baseline justify-between gap-x-4">
+							<h3 class="font-semibold text-ink">
+								<span data-i18n={`education.entries.${i}.degree`}>{entry.degree}</span>{' '}
+								<span class="font-normal text-muted">
+									· <span data-i18n={`education.entries.${i}.org`}>{entry.org}</span>
+								</span>
+							</h3>
+							<span class="text-sm text-muted" data-i18n={`education.entries.${i}.dates`}>{entry.dates}</span>
+						</div>
+						<p class="mt-2 text-sm text-muted" data-i18n={`education.entries.${i}.description`}>{entry.description}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
