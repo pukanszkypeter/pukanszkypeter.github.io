@@ -18,13 +18,13 @@ const entries = [
 ---
 
 <section id="education" class="scroll-mt-16 snap-start flex min-h-[calc(100vh-4rem)] items-center bg-surface px-4">
-	<div class="mx-auto max-w-3xl">
+	<div class="mx-auto w-full min-w-0 max-w-3xl">
 		<h2 class="text-2xl font-semibold text-ink" data-i18n="education.heading">Education</h2>
 
-		<div class="mt-8 space-y-8">
+		<div class="mt-8 space-y-4">
 			{
 				entries.map((entry, i) => (
-					<div class="border-l-2 border-accent/30 pl-6">
+					<div class="rounded-md border-l-2 border-accent/30 py-3 pl-6 pr-6 transition-all duration-300 hover:border-accent hover:bg-accent-subtle/50 hover:pl-7">
 						<div class="flex flex-wrap items-baseline justify-between gap-x-4">
 							<h3 class="font-semibold text-ink">
 								<span data-i18n={`education.entries.${i}.degree`}>{entry.degree}</span>{' '}

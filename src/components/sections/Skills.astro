@@ -71,14 +71,21 @@ const groups: { key: string; label: string; skills: { name: string; tier: Tier }
 	},
 ];
 
-const certifications = [{ name: 'Reinvention with Agentic AI — Accenture', url: '#' }];
+const certifications = [
+	{
+		name: 'Reinvention with Agentic AI — Accenture',
+		url: 'https://www.credly.com/badges/dbed460e-7bc6-4107-adbe-a80f66206657/public_url',
+	},
+];
 
-const coreBadge = 'rounded-full bg-accent-subtle px-2.5 py-1 text-xs text-accent';
-const familiarBadge = 'rounded-full border border-border px-2.5 py-1 text-xs text-muted';
+const coreBadge =
+	'rounded-full bg-accent-subtle px-2.5 py-1 text-xs text-accent transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm';
+const familiarBadge =
+	'rounded-full border border-border px-2.5 py-1 text-xs text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-sm';
 ---
 
 <section id="skills" class="scroll-mt-16 snap-start flex h-[calc(100vh-4rem)] items-center bg-surface px-4">
-	<div class="mx-auto flex h-full max-h-full w-full max-w-3xl flex-col justify-center py-6">
+	<div class="mx-auto flex h-full max-h-full w-full min-w-0 max-w-3xl flex-col justify-center py-6">
 		<div class="flex-shrink-0">
 			<h2 class="text-2xl font-semibold text-ink" data-i18n="skills.heading">Skills</h2>
 
@@ -132,7 +139,7 @@ const familiarBadge = 'rounded-full border border-border px-2.5 py-1 text-xs tex
 								href={cert.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+								class="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-sm"
 							>
 								{cert.name}
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3 w-3 flex-shrink-0">

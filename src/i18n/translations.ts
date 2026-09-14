@@ -26,7 +26,15 @@ interface Translation {
 		contact: string;
 	};
 	hero: { tagline: string; blurb: string; viewProjects: string; contactMe: string };
-	about: { heading: string; p1: string; p2: string; outsideWork: string; interests: string[] };
+	about: {
+		heading: string;
+		p1: string;
+		p2: string;
+		languages: string;
+		languageItems: string[];
+		outsideWork: string;
+		interests: string[];
+	};
 	projects: {
 		heading: string;
 		badge: string;
@@ -52,7 +60,15 @@ interface Translation {
 	};
 	experience: { heading: string; entries: ExperienceEntry[] };
 	education: { heading: string; entries: EducationEntry[] };
-	contact: { heading: string; blurb: string; emailMe: string; github: string; linkedin: string };
+	contact: {
+		heading: string;
+		blurb: string;
+		downloadCv: string;
+		downloadToast: string;
+		emailMe: string;
+		github: string;
+		linkedin: string;
+	};
 	footer: { email: string; github: string; linkedin: string };
 	notFound: { title: string; body: string; backHome: string };
 }
@@ -75,14 +91,16 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Software Engineer',
 			blurb:
-				'Software engineer at Accenture Hungary, using AI tooling to drive full-cycle delivery — from technical decisions to translating business needs into working software.',
+				'Software engineer at Accenture Hungary, using AI tooling to accelerate full-cycle delivery — from cross-team technical decisions to translating business needs into working software.',
 			viewProjects: 'View Projects',
 			contactMe: 'Contact Me',
 		},
 		about: {
 			heading: 'About',
 			p1: "I'm a software engineer with a background mainly in retail logistics software. I have a reliable and flexible personality, equally comfortable collaborating in a team and driving things independently, with a continuous focus on problem-solving and learning new technologies.",
-			p2: "My role has been evolving beyond hands-on engineering toward owning how a project gets delivered day to day. I see AI as a multiplier for that shift — it's what lets me take on more scope and move faster — and I'm working toward growing this into a full management role, applying that same AI-accelerated approach at a larger scale.",
+			p2: "My role has been evolving beyond hands-on engineering toward owning how a project gets delivered day to day — coordinating across engineering teams, presenting technical decisions to business stakeholders, and using AI tooling to take on more scope and move faster. I'm working toward growing this into a full management role, applying that same AI-accelerated approach at a larger scale.",
+			languages: 'Languages',
+			languageItems: ['Hungarian (Native)', 'English (Professional)', 'German (Professional)'],
 			outsideWork: 'Outside of work',
 			interests: ['Gym', 'Tennis', 'Gastronomy', 'Finance & Investing'],
 		},
@@ -122,20 +140,21 @@ export const translations: Record<Lang, Translation> = {
 					role: 'Software Engineer',
 					location: 'Budapest, Hungary',
 					dates: 'September 2022 – Present',
-					description: 'Full-cycle, full-stack development of warehouse logistics software in an agile environment.',
+					description:
+						'Full-cycle, full-stack development of a greenfield internal order-processing tool, supporting the deprecation of a legacy database. Coordinate with other engineering teams, present technical decisions directly to business stakeholders, and use AI tooling to accelerate delivery.',
 				},
 				{
-					role: 'Java Software Developer',
+					role: 'Software Developer',
 					location: 'Budapest, Hungary',
 					dates: 'June 2022 – September 2022',
-					description: 'Java maintenance of financial software.',
+					description: 'Java maintenance of financial software during a three-month engagement.',
 				},
 				{
 					role: 'Software Developer',
 					location: 'Budapest, Hungary',
 					dates: 'March 2021 – June 2022',
 					description:
-						'Comprehensive (full-stack) implementation of in-factory decision-support software and logistics processes.',
+						'Implemented several features for an in-factory decision-support application — including production-line quality assurance and factory data visualization — over 15 months of intensive full-stack development, supporting daily logistics operations.',
 				},
 			],
 		},
@@ -161,6 +180,8 @@ export const translations: Record<Lang, Translation> = {
 		contact: {
 			heading: 'Contact',
 			blurb: 'Open to new opportunities and collaborations — feel free to reach out.',
+			downloadCv: 'Download CV',
+			downloadToast: "Downloading the real CV — no malware, promise 🙂",
 			emailMe: 'Email Me',
 			github: 'GitHub',
 			linkedin: 'LinkedIn',
@@ -189,14 +210,16 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Szoftvermérnök',
 			blurb:
-				'Szoftvermérnök az Accenture Hungary-nál, aki AI-eszközökkel támogatja a teljes fejlesztési ciklust — a technikai döntésektől az üzleti igények szoftverré alakításáig.',
+				'Szoftvermérnök az Accenture Hungary-nál, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a csapatközi technikai döntésektől az üzleti igények szoftverré alakításáig.',
 			viewProjects: 'Projektek megtekintése',
 			contactMe: 'Kapcsolatfelvétel',
 		},
 		about: {
 			heading: 'Rólam',
 			p1: 'Szoftvermérnök vagyok, tapasztalatom elsősorban kiskereskedelmi logisztikai szoftverek terén van. Megbízható és rugalmas személyiség vagyok, egyaránt otthonosan mozgok csapatban és önállóan is, folyamatos problémamegoldási és tanulási igénnyel.',
-			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el. Az AI-t ennek a váltásnak a felgyorsítójaként látom — ez teszi lehetővé, hogy több feladatot vállaljak és gyorsabban haladjak —, és azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
+			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el — csapatközi együttműködés más fejlesztői csapatokkal, technikai döntések prezentálása üzleti érdekelteknek, és AI-eszközök használata, hogy több feladatot vállaljak és gyorsabban haladjak. Azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
+			languages: 'Nyelvek',
+			languageItems: ['Magyar (Anyanyelvi szint)', 'Angol (Felsőfokú)', 'Német (Felsőfokú)'],
 			outsideWork: 'Szabadidőben',
 			interests: ['Edzés', 'Tenisz', 'Gasztronómia', 'Pénzügyek és befektetés'],
 		},
@@ -236,19 +259,21 @@ export const translations: Record<Lang, Translation> = {
 					role: 'Szoftvermérnök',
 					location: 'Budapest, Magyarország',
 					dates: '2022. szeptember – jelenleg',
-					description: 'Raktárlogisztikai szoftver teljes ciklusú, full-stack fejlesztése agilis környezetben.',
+					description:
+						'Egy zöldmezős, belső rendelésfeldolgozó alkalmazás teljes ciklusú, full-stack fejlesztése, támogatva egy elavult adatbázis kivezetését. Együttműködöm más fejlesztői csapatokkal, közvetlenül prezentálom a technikai döntéseket az üzleti érdekelteknek, és AI-eszközökkel gyorsítom fel a szállítást.',
 				},
 				{
-					role: 'Java szoftverfejlesztő',
+					role: 'Szoftverfejlesztő',
 					location: 'Budapest, Magyarország',
 					dates: '2022. június – 2022. szeptember',
-					description: 'Pénzügyi szoftver Java alapú karbantartása.',
+					description: 'Pénzügyi szoftver Java alapú karbantartása egy három hónapos megbízás keretében.',
 				},
 				{
 					role: 'Szoftverfejlesztő',
 					location: 'Budapest, Magyarország',
 					dates: '2021. március – 2022. június',
-					description: 'Gyári döntéstámogató szoftverek és logisztikai folyamatok átfogó (full-stack) megvalósítása.',
+					description:
+						'Egy gyári döntéstámogató alkalmazáshoz fejlesztettem több funkciót — köztük gyártósori minőségbiztosítást és gyári adatvizualizációt — 15 hónapos, intenzív full-stack fejlesztői munka során, a napi logisztikai működés támogatására.',
 				},
 			],
 		},
@@ -274,6 +299,8 @@ export const translations: Record<Lang, Translation> = {
 		contact: {
 			heading: 'Kapcsolat',
 			blurb: 'Nyitott vagyok új lehetőségekre és együttműködésekre — bátran keress meg.',
+			downloadCv: 'Önéletrajz letöltése',
+			downloadToast: 'Az igazi önéletrajz töltődik le — semmi vírus, ígérem 🙂',
 			emailMe: 'Írj emailt',
 			github: 'GitHub',
 			linkedin: 'LinkedIn',
@@ -302,14 +329,16 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Softwareentwickler',
 			blurb:
-				'Softwareentwickler bei Accenture Hungary, der mit KI-gestützten Tools die gesamte Entwicklung vorantreibt — von technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
+				'Softwareentwickler bei Accenture Hungary, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von teamübergreifenden technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
 			viewProjects: 'Projekte ansehen',
 			contactMe: 'Kontakt aufnehmen',
 		},
 		about: {
 			heading: 'Über mich',
 			p1: 'Ich bin Softwareentwickler mit Erfahrung vor allem im Bereich Logistiksoftware für den Einzelhandel. Ich bin zuverlässig und flexibel, arbeite gerne im Team, aber genauso eigenständig, mit stetigem Fokus auf Problemlösung und das Erlernen neuer Technologien.',
-			p2: 'Meine Rolle entwickelt sich zunehmend über die praktische Entwicklungsarbeit hinaus hin zur Verantwortung für die tägliche Projektumsetzung. KI sehe ich dabei als Multiplikator — sie ermöglicht es mir, mehr Verantwortung zu übernehmen und schneller voranzukommen — und ich arbeite darauf hin, dies zu einer vollwertigen Führungsrolle auszubauen, mit demselben KI-gestützten Ansatz in größerem Maßstab.',
+			p2: 'Meine Rolle entwickelt sich zunehmend über die praktische Entwicklungsarbeit hinaus hin zur Verantwortung für die tägliche Projektumsetzung — durch die Zusammenarbeit mit anderen Entwicklungsteams, die Präsentation technischer Entscheidungen vor Fachbereichs-Stakeholdern und den Einsatz von KI-Tools, um mehr Verantwortung zu übernehmen und schneller voranzukommen. Ich arbeite darauf hin, dies zu einer vollwertigen Führungsrolle auszubauen, mit demselben KI-gestützten Ansatz in größerem Maßstab.',
+			languages: 'Sprachen',
+			languageItems: ['Ungarisch (Muttersprache)', 'Englisch (Verhandlungssicher)', 'Deutsch (Verhandlungssicher)'],
 			outsideWork: 'Neben der Arbeit',
 			interests: ['Fitness', 'Tennis', 'Gastronomie', 'Finanzen & Investieren'],
 		},
@@ -349,20 +378,21 @@ export const translations: Record<Lang, Translation> = {
 					role: 'Softwareentwickler',
 					location: 'Budapest, Ungarn',
 					dates: 'September 2022 – heute',
-					description: 'Full-Cycle-, Full-Stack-Entwicklung von Lagerlogistiksoftware in einem agilen Umfeld.',
+					description:
+						'Full-Cycle-, Full-Stack-Entwicklung eines internen Auftragsbearbeitungstools (Greenfield-Projekt), zur Unterstützung der Ablösung einer Legacy-Datenbank. Arbeite mit anderen Entwicklungsteams zusammen, präsentiere technische Entscheidungen direkt den Fachbereichs-Stakeholdern und nutze KI-Tools zur Beschleunigung der Lieferung.',
 				},
 				{
-					role: 'Java-Softwareentwickler',
+					role: 'Softwareentwickler',
 					location: 'Budapest, Ungarn',
 					dates: 'Juni 2022 – September 2022',
-					description: 'Java-Wartung von Finanzsoftware.',
+					description: 'Java-Wartung von Finanzsoftware im Rahmen eines dreimonatigen Einsatzes.',
 				},
 				{
 					role: 'Softwareentwickler',
 					location: 'Budapest, Ungarn',
 					dates: 'März 2021 – Juni 2022',
 					description:
-						'Umfassende (Full-Stack-)Umsetzung von Entscheidungsunterstützungssoftware und Logistikprozessen für die Fertigung.',
+						'Entwicklung mehrerer Funktionen für eine werksinterne Entscheidungsunterstützungssoftware — darunter Qualitätssicherung für die Fertigungslinie und Werksdatenvisualisierung — über 15 Monate intensiver Full-Stack-Entwicklung, zur Unterstützung des täglichen Logistikbetriebs.',
 				},
 			],
 		},
@@ -388,6 +418,8 @@ export const translations: Record<Lang, Translation> = {
 		contact: {
 			heading: 'Kontakt',
 			blurb: 'Offen für neue Möglichkeiten und Kooperationen — melde dich gerne.',
+			downloadCv: 'Lebenslauf herunterladen',
+			downloadToast: 'Der echte Lebenslauf wird heruntergeladen — kein Virus, versprochen 🙂',
 			emailMe: 'E-Mail senden',
 			github: 'GitHub',
 			linkedin: 'LinkedIn',

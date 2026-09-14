@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+	* { box-sizing: border-box; }
+
+	html, body {
+		margin: 0;
+		width: 1200px;
+		height: 630px;
+		overflow: hidden;
+	}
+
+	body {
+		font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		background: #f0f0f1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.card {
+		display: flex;
+		align-items: center;
+		gap: 64px;
+		padding: 0 90px;
+	}
+
+	.photo {
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center 15%;
+		border: 7px solid #ffffff;
+		box-shadow: 0 0 0 4px #ea580c;
+		flex-shrink: 0;
+	}
+
+	.text h1 {
+		margin: 0;
+		font-size: 72px;
+		font-weight: 700;
+		color: #1c1c1e;
+		letter-spacing: -0.01em;
+	}
+
+	.text p.tagline {
+		margin: 14px 0 0;
+		font-size: 36px;
+		font-weight: 600;
+		color: #ea580c;
+	}
+
+	.text p.blurb {
+		margin: 26px 0 0;
+		font-size: 24px;
+		color: #52525b;
+		max-width: 560px;
+		line-height: 1.55;
+	}
+</style>
+</head>
+<body>
+	<div class="card">
+		<img class="photo" src="assets/profile.jpg" alt="" />
+		<div class="text">
+			<h1>Pukánszky Péter</h1>
+			<p class="tagline">Software Engineer</p>
+			<p class="blurb">
+				Using AI tooling to accelerate full-cycle delivery — from technical decisions to
+				working software.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
