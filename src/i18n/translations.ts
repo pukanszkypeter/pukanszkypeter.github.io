@@ -91,7 +91,7 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Software Engineer',
 			blurb:
-				'Software engineer at Accenture Hungary, using AI tooling to accelerate full-cycle delivery — from cross-team technical decisions to translating business needs into working software.',
+				'Software engineer at Accenture Hungary, using AI tooling to accelerate full-cycle delivery — from technical decisions to translating business needs into working software.',
 			viewProjects: 'View Projects',
 			contactMe: 'Contact Me',
 		},
@@ -210,14 +210,14 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Szoftvermérnök',
 			blurb:
-				'Szoftvermérnök az Accenture Hungary-nál, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a csapatközi technikai döntésektől az üzleti igények szoftverré alakításáig.',
+				'Szoftvermérnök az Accenture Hungary-nál, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a technikai döntésektől az üzleti igények szoftverré alakításáig.',
 			viewProjects: 'Projektek megtekintése',
 			contactMe: 'Kapcsolatfelvétel',
 		},
 		about: {
 			heading: 'Rólam',
 			p1: 'Szoftvermérnök vagyok, tapasztalatom elsősorban kiskereskedelmi logisztikai szoftverek terén van. Megbízható és rugalmas személyiség vagyok, egyaránt otthonosan mozgok csapatban és önállóan is, folyamatos problémamegoldási és tanulási igénnyel.',
-			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el — csapatközi együttműködés más fejlesztői csapatokkal, technikai döntések prezentálása üzleti érdekelteknek, és AI-eszközök használata, hogy több feladatot vállaljak és gyorsabban haladjak. Azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
+			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el — együttműködés más fejlesztői csapatokkal, technikai döntések prezentálása üzleti érdekelteknek, és AI-eszközök használata, hogy több feladatot vállaljak és gyorsabban haladjak. Azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
 			languages: 'Nyelvek',
 			languageItems: ['Magyar (Anyanyelvi szint)', 'Angol (Felsőfokú)', 'Német (Felsőfokú)'],
 			outsideWork: 'Szabadidőben',
@@ -329,7 +329,7 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Softwareentwickler',
 			blurb:
-				'Softwareentwickler bei Accenture Hungary, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von teamübergreifenden technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
+				'Softwareentwickler bei Accenture Hungary, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
 			viewProjects: 'Projekte ansehen',
 			contactMe: 'Kontakt aufnehmen',
 		},
