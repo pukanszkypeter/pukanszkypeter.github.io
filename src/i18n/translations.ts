@@ -91,7 +91,7 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Software Engineer',
 			blurb:
-				'Software engineer at Accenture Hungary, using AI tooling to accelerate full-cycle delivery — from technical decisions to translating business needs into working software.',
+				'Software engineer at Accenture, using AI tooling to accelerate full-cycle delivery — from technical decisions to translating business needs into working software.',
 			viewProjects: 'View Projects',
 			contactMe: 'Contact Me',
 		},
@@ -210,7 +210,7 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Szoftvermérnök',
 			blurb:
-				'Szoftvermérnök az Accenture Hungary-nál, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a technikai döntésektől az üzleti igények szoftverré alakításáig.',
+				'Szoftvermérnök az Accenture-nél, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a technikai döntésektől az üzleti igények szoftverré alakításáig.',
 			viewProjects: 'Projektek megtekintése',
 			contactMe: 'Kapcsolatfelvétel',
 		},
@@ -329,7 +329,7 @@ export const translations: Record<Lang, Translation> = {
 		hero: {
 			tagline: 'Softwareentwickler',
 			blurb:
-				'Softwareentwickler bei Accenture Hungary, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
+				'Softwareentwickler bei Accenture, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
 			viewProjects: 'Projekte ansehen',
 			contactMe: 'Kontakt aufnehmen',
 		},
