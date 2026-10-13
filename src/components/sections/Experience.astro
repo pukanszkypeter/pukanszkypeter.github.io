@@ -1,54 +1,55 @@
 ---
 const entries = [
-  {
-    role: "Software Engineer",
-    org: "Accenture",
-    location: "Budapest, Hungary",
-    dates: "September 2022 – Present",
-    description:
-      "Full-cycle, full-stack development of a greenfield internal order-processing tool, supporting the deprecation of a legacy database. Coordinate with other engineering teams, present technical decisions directly to business stakeholders, and use AI tooling to accelerate delivery.",
-  },
-  {
-    role: "Software Developer",
-    org: "Citi",
-    location: "Budapest, Hungary",
-    dates: "June 2022 – September 2022",
-    description: "Java maintenance of financial software during a three-month engagement.",
-  },
-  {
-    role: "Software Developer",
-    org: "Systemathx",
-    location: "Budapest, Hungary",
-    dates: "March 2021 – June 2022",
-    description:
-      "Implemented several features for an in-factory decision-support application — including production-line quality assurance and factory data visualization — over 15 months of intensive full-stack development, supporting daily logistics operations.",
-  },
+	{
+		role: 'Software Engineer',
+		company: 'Accenture',
+		location: 'Budapest, Hungary',
+		dates: 'September 2022 – Present',
+		description:
+			'Full-cycle, full-stack development of a greenfield internal order-processing tool, supporting the deprecation of a legacy database. Coordinate with other engineering teams, present technical decisions directly to business stakeholders, and use AI tooling to accelerate delivery.',
+	},
+	{
+		role: 'Software Developer',
+		company: 'Citi',
+		location: 'Budapest, Hungary',
+		dates: 'June 2022 – September 2022',
+		description: 'Java maintenance of financial software during a three-month engagement.',
+	},
+	{
+		role: 'Software Developer',
+		company: 'Systemathx',
+		location: 'Budapest, Hungary',
+		dates: 'March 2021 – June 2022',
+		description:
+			'Implemented several features for an in-factory decision-support application — including production-line quality assurance and factory data visualization — over 15 months of intensive full-stack development, supporting daily logistics operations.',
+	},
 ];
 ---
 
-<section
-  id="experience"
-  class="scroll-mt-16 bg-bg px-4 py-20"
->
-  <div class="mx-auto w-full min-w-0 max-w-3xl">
-    <h2 class="text-2xl font-semibold text-ink" data-i18n="experience.heading">Experience</h2>
-
-    <div class="mt-8 space-y-4">
-      {
-        entries.map((entry, i) => (
-          <div class="rounded-md border-l-2 border-accent/30 py-3 pl-6 pr-6 transition-all duration-300 hover:border-accent hover:bg-accent-subtle/50 hover:pl-7">
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 class="font-semibold text-ink">
-                <span data-i18n={`experience.entries.${i}.role`}>{entry.role}</span>{" "}
-                <span class="font-normal text-muted">· {entry.org}</span>
-              </h3>
-              <span class="text-sm text-muted" data-i18n={`experience.entries.${i}.dates`}>{entry.dates}</span>
-            </div>
-            <p class="text-sm text-muted" data-i18n={`experience.entries.${i}.location`}>{entry.location}</p>
-            <p class="mt-2 text-sm text-muted" data-i18n={`experience.entries.${i}.description`}>{entry.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </div>
+<section id="experience" class="sec" style="max-width:1160px;margin:0 auto;padding:128px 24px 0">
+	<div class="reveal" style="display:flex;flex-direction:column;gap:14px;margin-bottom:44px">
+		<span class="mono" style="font-size:13px;font-weight:500;color:var(--atext);letter-spacing:0.08em;text-transform:uppercase" data-i18n="experience.label">04 — Experience</span>
+		<h2 class="display" style="font-size:clamp(34px,4.8vw,58px);line-height:1.04;font-weight:700" data-i18n="experience.headline">Where I've built things.</h2>
+	</div>
+	<div class="reveal" style="position:relative;display:flex;flex-direction:column;gap:20px;padding-left:36px">
+		<div style="position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:linear-gradient(to bottom,#C2410C,rgba(194,65,12,0.15))"></div>
+		{
+			entries.map((entry, i) => (
+				<div style="position:relative">
+					<span style="position:absolute;left:-33px;top:34px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(194,65,12,0.18)" />
+					<div class="glass calm" style="border-radius:28px;padding:30px 32px;display:flex;flex-direction:column;gap:14px">
+						<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px">
+							<h3 class="display" style="font-size:26px;font-weight:700">
+								<span data-i18n={`experience.entries.${i}.role`}>{entry.role}</span>{' '}
+								<span style="color:var(--atext)">· {entry.company}</span>
+							</h3>
+							<span class="mono" style="font-size:13px;color:var(--muted)" data-i18n={`experience.entries.${i}.dates`}>{entry.dates}</span>
+						</div>
+						<span class="mono" style="font-size:12px;color:var(--muted);letter-spacing:0.04em" data-i18n={`experience.entries.${i}.location`}>{entry.location}</span>
+						<p style="font-size:16px;line-height:1.65;color:var(--ink2);max-width:760px" data-i18n={`experience.entries.${i}.description`}>{entry.description}</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
 </section>

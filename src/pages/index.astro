@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Aurora from '../components/Aurora.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/sections/Hero.astro';
+import Marquee from '../components/sections/Marquee.astro';
 import About from '../components/sections/About.astro';
 import Projects from '../components/sections/Projects.astro';
 import Skills from '../components/sections/Skills.astro';
@@ -12,15 +14,31 @@ import Contact from '../components/sections/Contact.astro';
 ---
 
 <Layout>
-	<Navbar />
-	<main class="pt-16">
-		<Hero />
-		<About />
-		<Projects />
-		<Skills />
-		<Experience />
-		<Education />
-		<Contact />
-	</main>
-	<Footer />
+	<div class="themed" style="position:relative;display:flow-root;overflow-x:clip">
+		<Aurora />
+		<div style="position:relative;z-index:1">
+			<Navbar />
+			<main>
+				<div class="hero-fold">
+					<Hero />
+					<Marquee />
+				</div>
+				<About />
+				<Projects />
+				<Skills />
+				<Experience />
+				<Education />
+				<Contact />
+			</main>
+			<Footer />
+		</div>
+	</div>
 </Layout>
+
+<style>
+	.hero-fold {
+		display: flex;
+		flex-direction: column;
+		min-height: min(calc(100svh - var(--nav-h)), 1000px);
+	}
+</style>

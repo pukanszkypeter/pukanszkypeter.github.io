@@ -1,0 +1,23 @@
+---
+const languages = [
+	{ code: 'en', label: 'English' },
+	{ code: 'hu', label: 'Magyar' },
+	{ code: 'de', label: 'Deutsch' },
+];
+---
+
+<details class="langmenu">
+	<summary class="mono" id="lang-current" aria-label="Change language">EN</summary>
+	<div class="langpop glass-strong" id="lang-menu">
+		{
+			languages.map((lang) => (
+				<a href="#home" lang={lang.code} class="lang-option" data-lang={lang.code}>
+					{lang.label}
+					<svg class="lang-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="visibility:hidden">
+						<path d="M5 12.5l4.5 4.5L19 7.5" />
+					</svg>
+				</a>
+			))
+		}
+	</div>
+</details>

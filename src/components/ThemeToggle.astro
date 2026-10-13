@@ -1,0 +1,59 @@
+---
+interface Props {
+	id?: string;
+	class?: string;
+	size?: number;
+	ariaLabel?: string;
+}
+
+const { id, class: className = 'themebtn', size = 20, ariaLabel } = Astro.props;
+---
+
+<button type="button" id={id} class={className} data-theme-toggle aria-label={ariaLabel} aria-pressed="false">
+	<svg class="ic-sun" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<circle cx="12" cy="12" r="4"></circle>
+		<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+	</svg>
+	<svg class="ic-moon" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+	</svg>
+	<slot />
+</button>
+
+<style>
+	.ic-sun {
+		display: none;
+	}
+	:root[data-theme='dark'] .ic-sun {
+		display: block;
+	}
+	:root[data-theme='dark'] .ic-moon {
+		display: none;
+	}
+</style>
+
+<script>
+	const html = document.documentElement;
+	const toggles = document.querySelectorAll('[data-theme-toggle]');
+
+	const getTheme = (): 'light' | 'dark' => (html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+	const syncPressed = () => {
+		toggles.forEach((btn) => btn.setAttribute('aria-pressed', String(getTheme() === 'dark')));
+	};
+
+	const setTheme = (theme: 'light' | 'dark') => {
+		html.setAttribute('data-theme', theme);
+		try {
+			localStorage.setItem('theme', theme);
+		} catch {
+			/* localStorage unavailable */
+		}
+		syncPressed();
+	};
+
+	toggles.forEach((btn) => {
+		btn.addEventListener('click', () => setTheme(getTheme() === 'dark' ? 'light' : 'dark'));
+	});
+	syncPressed();
+</script>

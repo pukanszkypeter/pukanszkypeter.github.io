@@ -5,21 +5,23 @@ Personal portfolio and CV site for Pukánszky Péter — software engineer. 👋
 [![Check](https://github.com/pukanszkypeter/pukanszkypeter.github.io/actions/workflows/check.yml/badge.svg)](https://github.com/pukanszkypeter/pukanszkypeter.github.io/actions/workflows/check.yml)
 [![Deploy to GitHub Pages](https://github.com/pukanszkypeter/pukanszkypeter.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/pukanszkypeter/pukanszkypeter.github.io/actions/workflows/deploy.yml)
 [![Built with Astro](https://img.shields.io/badge/built%20with-Astro-BC52EE?logo=astro&logoColor=white)](https://astro.build)
-[![Tailwind CSS](https://img.shields.io/badge/styled%20with-Tailwind%20CSS-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Live site](https://img.shields.io/badge/live-pukanszkypeter.github.io-EA580C)](https://pukanszkypeter.github.io)
 
 ## ✨ Features
 
 - Single-page portfolio: Hero, About, Projects, Skills, Experience, Education, Contact
+- "Glass & Aurora" design: glass surfaces over an animated aurora background
+- Project details in a native `<dialog>` with shareable links; a swipe-to-close bottom sheet on phones
 - Full i18n — English, Hungarian, and German, with a working language switcher
-- Light/dark mode
+- Light/dark mode that follows the OS setting, with a manual toggle
+- Custom 404 page
 - Downloadable CV as a PDF, matching the site's design and the active language
-- Open Graph / Twitter social preview tags, sitemap, and `robots.txt`
+- Open Graph / Twitter social preview tags, web app manifest, sitemap, and `robots.txt`
 
 ## 🛠️ Tech stack
 
 - [Astro 7](https://astro.build)
-- [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config via `@theme`, no `tailwind.config.js`)
+- Hand-written CSS with custom-property design tokens (no CSS framework or UI library)
 - TypeScript
 - Deployed to GitHub Pages via GitHub Actions
 
@@ -27,13 +29,15 @@ Personal portfolio and CV site for Pukánszky Péter — software engineer. 👋
 
 ```text
 /
-├── public/                  # Static assets, CV PDFs, robots.txt, OG image
-├── cv-source/               # HTML/CSS source used to generate the CV PDFs (not routed by Astro)
+├── public/                  # CV PDFs, favicons, app icons, manifest, OG image, robots.txt
 ├── src/
 │   ├── assets/              # Images processed by Astro's image pipeline
 │   ├── components/
 │   │   ├── Navbar.astro
 │   │   ├── Footer.astro
+│   │   ├── Aurora.astro      # Decorative background blobs
+│   │   ├── ThemeToggle.astro
+│   │   ├── LangMenu.astro
 │   │   └── sections/        # One component per page section
 │   ├── i18n/
 │   │   └── translations.ts  # All EN/HU/DE copy, keyed by section
@@ -43,7 +47,7 @@ Personal portfolio and CV site for Pukánszky Péter — software engineer. 👋
 │   │   ├── index.astro
 │   │   └── 404.astro
 │   └── styles/
-│       └── global.css       # Design tokens (colors, spacing) as Tailwind v4 @theme
+│       └── global.css       # Design tokens (light/dark) and shared component styles
 └── astro.config.mjs
 ```
 
@@ -61,11 +65,11 @@ All commands run from the root of the project:
 
 ## 🌍 Translations
 
-All UI copy lives in `src/i18n/translations.ts`, keyed by `Lang` (`en` \| `hu` \| `de`). Elements opt into translation via a `data-i18n="section.key"` attribute; `Navbar.astro`'s script walks the DOM and applies the active language on load and on switch.
+All UI copy lives in `src/i18n/translations.ts`, keyed by `Lang` (`en` \| `hu` \| `de`). Elements opt into translation via a `data-i18n="section.key"` attribute; `Navbar.astro`'s script walks the DOM and applies the active language on load and on switch (the 404 page has its own small copy of that logic).
 
 ## 📄 Updating the CV PDFs
 
-The downloadable CVs are generated from the HTML/CSS in `cv-source/`, rendered to PDF with headless Chromium-based browser and placed in `public/`. After editing a `cv-source/*.html` file, regenerate its PDF and verify it still fits on one page before committing.
+The downloadable CVs (`public/pukanszky-peter-cv-{en,hu,de}.pdf`) and the social preview image (`public/og-image.png`) are designed and exported with Claude Design, then dropped into `public/`. There is no CV source in this repo. When the site's copy changes, re-export the PDFs so they stay in sync, keep the same file names, and check each one still fits on one page.
 
 ## ✅ CI
 

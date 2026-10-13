@@ -9,9 +9,18 @@ interface ExperienceEntry {
 
 interface EducationEntry {
 	degree: string;
-	org: string;
 	dates: string;
-	description: string;
+	thesis: string;
+}
+
+interface ProjectItem {
+	name: string;
+	year: string;
+	desc: string;
+	overview: string;
+	role: string;
+	highlights: string[];
+	tags: string[];
 }
 
 interface Translation {
@@ -24,30 +33,56 @@ interface Translation {
 		experience: string;
 		education: string;
 		contact: string;
+		lightTheme: string;
+		nightTheme: string;
 	};
-	hero: { tagline: string; blurb: string; viewProjects: string; contactMe: string };
+	hero: {
+		badge: string;
+		tagline: string;
+		blurb: string;
+		viewProjects: string;
+		contactMe: string;
+		pillFullStack: string;
+		pillAiAssisted: string;
+		pillYears: string;
+		pillOwnership: string;
+	};
 	about: {
-		heading: string;
+		label: string;
+		headline: string;
 		p1: string;
 		p2: string;
 		languages: string;
-		languageItems: string[];
+		languageNames: string[];
+		languageLevels: string[];
 		outsideWork: string;
 		interests: string[];
 	};
 	projects: {
-		heading: string;
+		label: string;
+		headline: string;
 		badge: string;
 		viewDetails: string;
-		openProject: string;
-		close: string;
-		item: { title: string; description: string; details: string; tags: string[] };
+		imagePlaceholder: string;
+		items: ProjectItem[];
+		dialog: {
+			role: string;
+			highlights: string;
+			liveDemo: string;
+			sourceCode: string;
+			previous: string;
+			next: string;
+		};
 	};
 	skills: {
-		heading: string;
+		label: string;
+		headline: string;
 		core: string;
 		familiar: string;
-		certifications: string;
+		certLabel: string;
+		certName: string;
+		certIssuer: string;
+		viewBadge: string;
 		groups: {
 			aiTools: string;
 			languages: string;
@@ -58,20 +93,55 @@ interface Translation {
 			testing: string;
 		};
 	};
-	experience: { heading: string; entries: ExperienceEntry[] };
-	education: { heading: string; entries: EducationEntry[] };
+	experience: { label: string; headline: string; entries: ExperienceEntry[] };
+	education: { label: string; headline: string; entries: EducationEntry[] };
 	contact: {
-		heading: string;
+		label: string;
+		headlinePlain: string;
+		headlineAccent: string;
 		blurb: string;
 		downloadCv: string;
-		downloadToast: string;
-		emailMe: string;
-		github: string;
-		linkedin: string;
+		downloadSafe: string;
+		emailLabel: string;
+		githubLabel: string;
+		linkedinLabel: string;
 	};
 	footer: { email: string; github: string; linkedin: string };
-	notFound: { title: string; body: string; backHome: string };
+	notFound: { label: string; titlePlain: string; titleAccent: string; body: string; backHome: string; jumpTo: string };
 }
+
+const placeholderProjectEn: ProjectItem = {
+	name: '[Project Name]',
+	year: '[Year]',
+	desc: '[A short description of the project and your role in it.]',
+	overview:
+		'[A short overview of the project: the problem it solves, who it is for, and what the end result looks like.]',
+	role: '[Your responsibilities and what you owned.]',
+	highlights: ['[Key outcome or feature]', '[Key outcome or feature]', '[Key outcome or feature]'],
+	tags: ['[Tech]', '[Tech]', '[Tech]', '[Tech]'],
+};
+
+const placeholderProjectHu: ProjectItem = {
+	name: '[Projekt neve]',
+	year: '[Év]',
+	desc: '[Egy rövid leírás a projektről és a szerepedről benne.]',
+	overview:
+		'[Rövid áttekintés a projektről: milyen problémát old meg, kinek szól, és hogyan néz ki a végeredmény.]',
+	role: '[A felelősségi köreid és amiért te feleltél.]',
+	highlights: ['[Fontos eredmény vagy funkció]', '[Fontos eredmény vagy funkció]', '[Fontos eredmény vagy funkció]'],
+	tags: ['[Technológia]', '[Technológia]', '[Technológia]', '[Technológia]'],
+};
+
+const placeholderProjectDe: ProjectItem = {
+	name: '[Projektname]',
+	year: '[Jahr]',
+	desc: '[Eine kurze Beschreibung des Projekts und deiner Rolle darin.]',
+	overview:
+		'[Ein kurzer Überblick über das Projekt: welches Problem es löst, für wen es gedacht ist und wie das Endergebnis aussieht.]',
+	role: '[Deine Verantwortlichkeiten und wofür du zuständig warst.]',
+	highlights: ['[Wichtiges Ergebnis oder Feature]', '[Wichtiges Ergebnis oder Feature]', '[Wichtiges Ergebnis oder Feature]'],
+	tags: ['[Technologie]', '[Technologie]', '[Technologie]', '[Technologie]'],
+};
 
 export const translations: Record<Lang, Translation> = {
 	en: {
@@ -87,42 +157,56 @@ export const translations: Record<Lang, Translation> = {
 			experience: 'Experience',
 			education: 'Education',
 			contact: 'Contact',
+			lightTheme: 'Light theme',
+			nightTheme: 'Night theme',
 		},
 		hero: {
+			badge: 'Open to new opportunities',
 			tagline: 'Software Engineer',
-			blurb:
-				'Software engineer at Accenture, using AI tooling to accelerate full-cycle delivery — from technical decisions to translating business needs into working software.',
+			blurb: 'Software engineer at Accenture, using AI tooling to accelerate full-cycle delivery.',
 			viewProjects: 'View Projects',
 			contactMe: 'Contact Me',
+			pillFullStack: 'Full-stack',
+			pillAiAssisted: 'AI-assisted',
+			pillYears: '5+ years',
+			pillOwnership: 'Delivery ownership',
 		},
 		about: {
-			heading: 'About',
+			label: '01 — About',
+			headline: 'Solving problems, learning fast, owning delivery.',
 			p1: "I'm a software engineer with a background mainly in retail logistics software. I have a reliable and flexible personality, equally comfortable collaborating in a team and driving things independently, with a continuous focus on problem-solving and learning new technologies.",
 			p2: "My role has been evolving beyond hands-on engineering toward owning how a project gets delivered day to day — coordinating across engineering teams, presenting technical decisions to business stakeholders, and using AI tooling to take on more scope and move faster. I'm working toward growing this into a full management role, applying that same AI-accelerated approach at a larger scale.",
 			languages: 'Languages',
-			languageItems: ['Hungarian (Native)', 'English (Professional)', 'German (Professional)'],
+			languageNames: ['Hungarian', 'English', 'German'],
+			languageLevels: ['Native', 'Professional', 'Professional'],
 			outsideWork: 'Outside of work',
 			interests: ['Gym', 'Tennis', 'Gastronomy', 'Finance & Investing'],
 		},
 		projects: {
-			heading: 'Projects',
+			label: '02 — Projects',
+			headline: 'Selected work',
 			badge: 'Work in progress',
 			viewDetails: 'View Details',
-			openProject: 'Open Project',
-			close: 'Close',
-			item: {
-				title: '[Project Name]',
-				description: '[One to two sentences describing what the project does and why you built it.]',
-				details:
-					'[Longer placeholder text for the dialog — project goals, your role, challenges solved, and outcomes. Replace with real details once available.]',
-				tags: ['[Tech 1]', '[Tech 2]', '[Tech 3]'],
+			imagePlaceholder: '[ project image ]',
+			items: [placeholderProjectEn, placeholderProjectEn, placeholderProjectEn],
+			dialog: {
+				role: 'My role',
+				highlights: 'Highlights',
+				liveDemo: 'Live demo',
+				sourceCode: 'Source code',
+				previous: 'Previous',
+				next: 'Next',
 			},
 		},
 		skills: {
-			heading: 'Skills',
+			label: '03 — Skills',
+			headline: 'The toolbox, from code to production.',
 			core: 'Core',
 			familiar: 'Familiar with',
-			certifications: 'Certifications',
+			certLabel: 'Certification',
+			certName: 'Reinvention with Agentic AI',
+			certIssuer: 'Issued by Accenture',
+			viewBadge: 'View badge',
 			groups: {
 				aiTools: 'AI Tools',
 				languages: 'Languages',
@@ -134,7 +218,8 @@ export const translations: Record<Lang, Translation> = {
 			},
 		},
 		experience: {
-			heading: 'Experience',
+			label: '04 — Experience',
+			headline: "Where I've built things.",
 			entries: [
 				{
 					role: 'Software Engineer',
@@ -159,38 +244,42 @@ export const translations: Record<Lang, Translation> = {
 			],
 		},
 		education: {
-			heading: 'Education',
+			label: '05 — Education',
+			headline: 'Eötvös Loránd University.',
 			entries: [
 				{
-					degree: "Master's degree, Computer Science",
-					org: 'Eötvös Loránd University',
+					degree: "Master's in Computer Science",
 					dates: 'September 2021 – June 2023',
-					description:
+					thesis:
 						'Thesis on researching various mobile robot dispersion algorithms, presenting the results and simulations through a web application.',
 				},
 				{
-					degree: "Bachelor's degree, Computer Science",
-					org: 'Eötvös Loránd University',
+					degree: "Bachelor's in Computer Science",
 					dates: 'September 2018 – June 2021',
-					description:
+					thesis:
 						'Thesis on developing a web application to compare and present sentiment analysis results from Python and SAP.',
 				},
 			],
 		},
 		contact: {
-			heading: 'Contact',
-			blurb: 'Open to new opportunities and collaborations — feel free to reach out.',
-			downloadCv: 'Download CV',
-			downloadToast: "Downloading the real CV — no malware, promise 🙂",
-			emailMe: 'Email Me',
-			github: 'GitHub',
-			linkedin: 'LinkedIn',
+			label: '06 — Contact',
+			headlinePlain: "Let's build something",
+			headlineAccent: 'together.',
+			blurb: 'Open to new opportunities and collaborations.',
+			downloadCv: 'Download CV (PDF)',
+			downloadSafe: "Yes, it's safe to download.",
+			emailLabel: 'Email',
+			githubLabel: 'GitHub',
+			linkedinLabel: 'LinkedIn',
 		},
 		footer: { email: 'Email', github: 'GitHub', linkedin: 'LinkedIn' },
 		notFound: {
-			title: 'Page not found',
-			body: "The page you're looking for doesn't exist. It might have been moved, or the link might be incorrect.",
-			backHome: 'Back to Home',
+			label: 'Error 404',
+			titlePlain: 'This page wandered',
+			titleAccent: 'off.',
+			body: "The link may be broken or the page may have moved. Let's get you back on track.",
+			backHome: 'Back to home',
+			jumpTo: 'Or jump to',
 		},
 	},
 	hu: {
@@ -206,42 +295,56 @@ export const translations: Record<Lang, Translation> = {
 			experience: 'Tapasztalat',
 			education: 'Tanulmányok',
 			contact: 'Kapcsolat',
+			lightTheme: 'Világos téma',
+			nightTheme: 'Sötét téma',
 		},
 		hero: {
+			badge: 'Nyitott új lehetőségekre',
 			tagline: 'Szoftvermérnök',
-			blurb:
-				'Szoftvermérnök az Accenture-nél, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust — a technikai döntésektől az üzleti igények szoftverré alakításáig.',
+			blurb: 'Szoftvermérnök az Accenture-nél, aki AI-eszközökkel gyorsítja fel a teljes fejlesztési ciklust.',
 			viewProjects: 'Projektek megtekintése',
 			contactMe: 'Kapcsolatfelvétel',
+			pillFullStack: 'Full-stack',
+			pillAiAssisted: 'AI-asszisztált',
+			pillYears: '5+ év',
+			pillOwnership: 'Felelősségvállalás',
 		},
 		about: {
-			heading: 'Rólam',
+			label: '01 — Rólam',
+			headline: 'Problémamegoldás, gyors tanulás, felelősségvállalás.',
 			p1: 'Szoftvermérnök vagyok, tapasztalatom elsősorban kiskereskedelmi logisztikai szoftverek terén van. Megbízható és rugalmas személyiség vagyok, egyaránt otthonosan mozgok csapatban és önállóan is, folyamatos problémamegoldási és tanulási igénnyel.',
 			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el — együttműködés más fejlesztői csapatokkal, technikai döntések prezentálása üzleti érdekelteknek, és AI-eszközök használata, hogy több feladatot vállaljak és gyorsabban haladjak. Azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
 			languages: 'Nyelvek',
-			languageItems: ['Magyar (Anyanyelvi szint)', 'Angol (Felsőfokú)', 'Német (Felsőfokú)'],
+			languageNames: ['Magyar', 'Angol', 'Német'],
+			languageLevels: ['Anyanyelvi szint', 'Felsőfokú', 'Felsőfokú'],
 			outsideWork: 'Szabadidőben',
 			interests: ['Edzés', 'Tenisz', 'Gasztronómia', 'Pénzügyek és befektetés'],
 		},
 		projects: {
-			heading: 'Projektek',
+			label: '02 — Projektek',
+			headline: 'Válogatott munkák',
 			badge: 'Folyamatban',
 			viewDetails: 'Részletek megtekintése',
-			openProject: 'Projekt megnyitása',
-			close: 'Bezárás',
-			item: {
-				title: '[Projekt neve]',
-				description: '[Egy-két mondat arról, mit csinál a projekt és miért hoztad létre.]',
-				details:
-					'[Hosszabb helykitöltő szöveg a párbeszédablakhoz — projektcélok, a szereped, megoldott kihívások és eredmények. Cseréld le valós adatokra, ha elérhetők.]',
-				tags: ['[Technológia 1]', '[Technológia 2]', '[Technológia 3]'],
+			imagePlaceholder: '[ projekt kép ]',
+			items: [placeholderProjectHu, placeholderProjectHu, placeholderProjectHu],
+			dialog: {
+				role: 'Az én szerepem',
+				highlights: 'Kiemelt eredmények',
+				liveDemo: 'Élő demó',
+				sourceCode: 'Forráskód',
+				previous: 'Előző',
+				next: 'Következő',
 			},
 		},
 		skills: {
-			heading: 'Készségek',
+			label: '03 — Készségek',
+			headline: 'Az eszköztár, a kódtól a termelésig.',
 			core: 'Fő terület',
 			familiar: 'Ismerem',
-			certifications: 'Tanúsítványok',
+			certLabel: 'Tanúsítvány',
+			certName: 'Reinvention with Agentic AI',
+			certIssuer: 'Kiállította: Accenture',
+			viewBadge: 'Jelvény megtekintése',
 			groups: {
 				aiTools: 'AI eszközök',
 				languages: 'Nyelvek',
@@ -253,7 +356,8 @@ export const translations: Record<Lang, Translation> = {
 			},
 		},
 		experience: {
-			heading: 'Tapasztalat',
+			label: '04 — Tapasztalat',
+			headline: 'Ahol dolgokat építettem.',
 			entries: [
 				{
 					role: 'Szoftvermérnök',
@@ -278,38 +382,42 @@ export const translations: Record<Lang, Translation> = {
 			],
 		},
 		education: {
-			heading: 'Tanulmányok',
+			label: '05 — Tanulmányok',
+			headline: 'Eötvös Loránd Tudományegyetem.',
 			entries: [
 				{
 					degree: 'Mesterdiploma, Programtervező informatikus',
-					org: 'Eötvös Loránd Tudományegyetem',
 					dates: '2021. szeptember – 2023. június',
-					description:
+					thesis:
 						'Szakdolgozat mobil robotok szétszóródási algoritmusainak kutatásáról, az eredmények és szimulációk egy webalkalmazáson keresztüli bemutatásával.',
 				},
 				{
 					degree: 'Alapdiploma, Programtervező informatikus',
-					org: 'Eötvös Loránd Tudományegyetem',
 					dates: '2018. szeptember – 2021. június',
-					description:
+					thesis:
 						'Szakdolgozat egy webalkalmazás fejlesztéséről, amely Python és SAP alapú szentimentelemzési eredményeket hasonlít össze és jelenít meg.',
 				},
 			],
 		},
 		contact: {
-			heading: 'Kapcsolat',
-			blurb: 'Nyitott vagyok új lehetőségekre és együttműködésekre — bátran keress meg.',
-			downloadCv: 'Önéletrajz letöltése',
-			downloadToast: 'Az igazi önéletrajz töltődik le — semmi vírus, ígérem 🙂',
-			emailMe: 'Írj emailt',
-			github: 'GitHub',
-			linkedin: 'LinkedIn',
+			label: '06 — Kapcsolat',
+			headlinePlain: 'Építsünk valamit',
+			headlineAccent: 'együtt.',
+			blurb: 'Nyitott vagyok új lehetőségekre és együttműködésekre.',
+			downloadCv: 'Önéletrajz letöltése (PDF)',
+			downloadSafe: 'Igen, biztonságos letölteni.',
+			emailLabel: 'Email',
+			githubLabel: 'GitHub',
+			linkedinLabel: 'LinkedIn',
 		},
 		footer: { email: 'Email', github: 'GitHub', linkedin: 'LinkedIn' },
 		notFound: {
-			title: 'Az oldal nem található',
-			body: 'A keresett oldal nem létezik. Lehet, hogy áthelyezték, vagy a hivatkozás hibás.',
+			label: '404-es hiba',
+			titlePlain: 'Ez az oldal',
+			titleAccent: 'elkószált.',
+			body: 'Lehet, hogy a hivatkozás hibás, vagy az oldalt áthelyezték. Innen könnyen visszatalálsz.',
 			backHome: 'Vissza a kezdőlapra',
+			jumpTo: 'Vagy ugorj ide',
 		},
 	},
 	de: {
@@ -325,42 +433,56 @@ export const translations: Record<Lang, Translation> = {
 			experience: 'Erfahrung',
 			education: 'Ausbildung',
 			contact: 'Kontakt',
+			lightTheme: 'Heller Modus',
+			nightTheme: 'Dunkler Modus',
 		},
 		hero: {
+			badge: 'Offen für neue Möglichkeiten',
 			tagline: 'Softwareentwickler',
-			blurb:
-				'Softwareentwickler bei Accenture, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt — von technischen Entscheidungen bis zur Umsetzung geschäftlicher Anforderungen in funktionierende Software.',
+			blurb: 'Softwareentwickler bei Accenture, der mit KI-gestützten Tools die gesamte Entwicklung beschleunigt.',
 			viewProjects: 'Projekte ansehen',
 			contactMe: 'Kontakt aufnehmen',
+			pillFullStack: 'Full-Stack',
+			pillAiAssisted: 'KI-unterstützt',
+			pillYears: '5+ Jahre',
+			pillOwnership: 'Lieferverantwortung',
 		},
 		about: {
-			heading: 'Über mich',
+			label: '01 — Über mich',
+			headline: 'Probleme lösen, schnell lernen, Verantwortung übernehmen.',
 			p1: 'Ich bin Softwareentwickler mit Erfahrung vor allem im Bereich Logistiksoftware für den Einzelhandel. Ich bin zuverlässig und flexibel, arbeite gerne im Team, aber genauso eigenständig, mit stetigem Fokus auf Problemlösung und das Erlernen neuer Technologien.',
 			p2: 'Meine Rolle entwickelt sich zunehmend über die praktische Entwicklungsarbeit hinaus hin zur Verantwortung für die tägliche Projektumsetzung — durch die Zusammenarbeit mit anderen Entwicklungsteams, die Präsentation technischer Entscheidungen vor Fachbereichs-Stakeholdern und den Einsatz von KI-Tools, um mehr Verantwortung zu übernehmen und schneller voranzukommen. Ich arbeite darauf hin, dies zu einer vollwertigen Führungsrolle auszubauen, mit demselben KI-gestützten Ansatz in größerem Maßstab.',
 			languages: 'Sprachen',
-			languageItems: ['Ungarisch (Muttersprache)', 'Englisch (Verhandlungssicher)', 'Deutsch (Verhandlungssicher)'],
+			languageNames: ['Ungarisch', 'Englisch', 'Deutsch'],
+			languageLevels: ['Muttersprache', 'Verhandlungssicher', 'Verhandlungssicher'],
 			outsideWork: 'Neben der Arbeit',
 			interests: ['Fitness', 'Tennis', 'Gastronomie', 'Finanzen & Investieren'],
 		},
 		projects: {
-			heading: 'Projekte',
+			label: '02 — Projekte',
+			headline: 'Ausgewählte Arbeiten',
 			badge: 'In Arbeit',
 			viewDetails: 'Details ansehen',
-			openProject: 'Projekt öffnen',
-			close: 'Schließen',
-			item: {
-				title: '[Projektname]',
-				description: '[Ein bis zwei Sätze darüber, was das Projekt macht und warum du es entwickelt hast.]',
-				details:
-					'[Längerer Platzhaltertext für den Dialog — Projektziele, deine Rolle, gelöste Herausforderungen und Ergebnisse. Durch echte Details ersetzen, sobald verfügbar.]',
-				tags: ['[Technologie 1]', '[Technologie 2]', '[Technologie 3]'],
+			imagePlaceholder: '[ Projektbild ]',
+			items: [placeholderProjectDe, placeholderProjectDe, placeholderProjectDe],
+			dialog: {
+				role: 'Meine Rolle',
+				highlights: 'Highlights',
+				liveDemo: 'Live-Demo',
+				sourceCode: 'Quellcode',
+				previous: 'Zurück',
+				next: 'Weiter',
 			},
 		},
 		skills: {
-			heading: 'Kenntnisse',
+			label: '03 — Kenntnisse',
+			headline: 'Das Werkzeug, vom Code bis zur Produktion.',
 			core: 'Kernkompetenz',
 			familiar: 'Vertraut mit',
-			certifications: 'Zertifikate',
+			certLabel: 'Zertifikat',
+			certName: 'Reinvention with Agentic AI',
+			certIssuer: 'Ausgestellt von Accenture',
+			viewBadge: 'Badge ansehen',
 			groups: {
 				aiTools: 'KI-Tools',
 				languages: 'Sprachen',
@@ -372,7 +494,8 @@ export const translations: Record<Lang, Translation> = {
 			},
 		},
 		experience: {
-			heading: 'Erfahrung',
+			label: '04 — Erfahrung',
+			headline: 'Wo ich Dinge gebaut habe.',
 			entries: [
 				{
 					role: 'Softwareentwickler',
@@ -397,38 +520,42 @@ export const translations: Record<Lang, Translation> = {
 			],
 		},
 		education: {
-			heading: 'Ausbildung',
+			label: '05 — Ausbildung',
+			headline: 'Eötvös-Loránd-Universität.',
 			entries: [
 				{
 					degree: 'Master, Informatik',
-					org: 'Eötvös-Loránd-Universität',
 					dates: 'September 2021 – Juni 2023',
-					description:
+					thesis:
 						'Masterarbeit zur Erforschung verschiedener Streuungsalgorithmen für mobile Roboter, mit Darstellung der Ergebnisse und Simulationen über eine Webanwendung.',
 				},
 				{
 					degree: 'Bachelor, Informatik',
-					org: 'Eötvös-Loránd-Universität',
 					dates: 'September 2018 – Juni 2021',
-					description:
+					thesis:
 						'Bachelorarbeit zur Entwicklung einer Webanwendung zum Vergleich und zur Darstellung von Sentiment-Analyse-Ergebnissen aus Python und SAP.',
 				},
 			],
 		},
 		contact: {
-			heading: 'Kontakt',
-			blurb: 'Offen für neue Möglichkeiten und Kooperationen — melde dich gerne.',
-			downloadCv: 'Lebenslauf herunterladen',
-			downloadToast: 'Der echte Lebenslauf wird heruntergeladen — kein Virus, versprochen 🙂',
-			emailMe: 'E-Mail senden',
-			github: 'GitHub',
-			linkedin: 'LinkedIn',
+			label: '06 — Kontakt',
+			headlinePlain: 'Lass uns etwas',
+			headlineAccent: 'gemeinsam bauen.',
+			blurb: 'Offen für neue Möglichkeiten und Kooperationen.',
+			downloadCv: 'Lebenslauf herunterladen (PDF)',
+			downloadSafe: 'Ja, der Download ist sicher.',
+			emailLabel: 'E-Mail',
+			githubLabel: 'GitHub',
+			linkedinLabel: 'LinkedIn',
 		},
 		footer: { email: 'E-Mail', github: 'GitHub', linkedin: 'LinkedIn' },
 		notFound: {
-			title: 'Seite nicht gefunden',
-			body: 'Die gesuchte Seite existiert nicht. Sie wurde möglicherweise verschoben, oder der Link ist fehlerhaft.',
+			label: 'Fehler 404',
+			titlePlain: 'Diese Seite hat sich',
+			titleAccent: 'verirrt.',
+			body: 'Der Link ist möglicherweise fehlerhaft oder die Seite wurde verschoben. Hier geht es zurück.',
 			backHome: 'Zurück zur Startseite',
+			jumpTo: 'Oder direkt zu',
 		},
 	},
 };
