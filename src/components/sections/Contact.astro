@@ -15,27 +15,49 @@
 			</div>
 		</div>
 		<div style="display:flex;flex-direction:column;gap:12px">
-			<a class="glass linkrow" href="mailto:peter.pukanszky@outlook.com" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:0 24px;border-radius:20px">
+			<a class="glass linkrow crow" href="mailto:peter.pukanszky@outlook.com" style="display:flex;align-items:center;justify-content:space-between;min-height:72px;border-radius:20px">
 				<span style="display:flex;flex-direction:column;gap:2px;min-width:0">
 					<span class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--atext)" data-i18n="contact.emailLabel">Email</span>
-					<span style="font-weight:600;font-size:16px;overflow-wrap:anywhere">peter.pukanszky@outlook.com</span>
+					<span class="cval">peter.pukanszky@<wbr />outlook.com</span>
 				</span>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--atext)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
 			</a>
-			<a class="glass linkrow" href="https://github.com/pukanszkypeter" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:0 24px;border-radius:20px">
+			<a class="glass linkrow crow" href="https://github.com/pukanszkypeter" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;min-height:72px;border-radius:20px">
 				<span style="display:flex;flex-direction:column;gap:2px;min-width:0">
 					<span class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--atext)" data-i18n="contact.githubLabel">GitHub</span>
-					<span style="font-weight:600;font-size:16px">github.com/pukanszkypeter</span>
+					<span class="cval">github.com/<wbr />pukanszkypeter</span>
 				</span>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--atext)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
 			</a>
-			<a class="glass linkrow" href="https://www.linkedin.com/in/pukanszkypeter/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:0 24px;border-radius:20px">
+			<a class="glass linkrow crow" href="https://www.linkedin.com/in/pukanszkypeter/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;min-height:72px;border-radius:20px">
 				<span style="display:flex;flex-direction:column;gap:2px;min-width:0">
 					<span class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--atext)" data-i18n="contact.linkedinLabel">LinkedIn</span>
-					<span style="font-weight:600;font-size:16px">linkedin.com/in/pukanszkypeter</span>
+					<span class="cval">linkedin.com/in/<wbr />pukanszkypeter</span>
 				</span>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--atext)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
 			</a>
 		</div>
 	</div>
 </section>
+
+<style>
+	.crow {
+		gap: 16px;
+		padding: 0 24px;
+	}
+	.crow svg {
+		flex: 0 0 auto;
+	}
+	/* Long addresses wrap after "@" or "/" on narrow screens instead of overflowing the row */
+	.cval {
+		font-weight: 600;
+		font-size: 16px;
+		overflow-wrap: anywhere;
+	}
+	@media (max-width: 400px) {
+		.crow {
+			gap: 12px;
+			padding: 0 16px;
+		}
+	}
+</style>

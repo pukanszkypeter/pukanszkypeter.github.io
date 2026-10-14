@@ -174,7 +174,7 @@ export const translations: Record<Lang, Translation> = {
 		about: {
 			label: '01 — About',
 			headline: 'Solving problems, learning fast, owning delivery.',
-			p1: "I'm a software engineer with a background mainly in retail logistics software. I have a reliable and flexible personality, equally comfortable collaborating in a team and driving things independently, with a continuous focus on problem-solving and learning new technologies.",
+			p1: "I'm a software engineer with a background mainly in retail logistics software. I work in international teams alongside engineers and specialists from different countries. I have a reliable and flexible personality, equally comfortable collaborating in a team and driving things independently, with a continuous focus on problem-solving and learning new technologies.",
 			p2: "My role has been evolving beyond hands-on engineering toward owning how a project gets delivered day to day — coordinating across engineering teams, presenting technical decisions to business stakeholders, and using AI tooling to take on more scope and move faster. I'm working toward growing this into a full management role, applying that same AI-accelerated approach at a larger scale.",
 			languages: 'Languages',
 			languageNames: ['Hungarian', 'English', 'German'],
@@ -312,7 +312,7 @@ export const translations: Record<Lang, Translation> = {
 		about: {
 			label: '01 — Rólam',
 			headline: 'Problémamegoldás, gyors tanulás, felelősségvállalás.',
-			p1: 'Szoftvermérnök vagyok, tapasztalatom elsősorban kiskereskedelmi logisztikai szoftverek terén van. Megbízható és rugalmas személyiség vagyok, egyaránt otthonosan mozgok csapatban és önállóan is, folyamatos problémamegoldási és tanulási igénnyel.',
+			p1: 'Szoftvermérnök vagyok, tapasztalatom elsősorban kiskereskedelmi logisztikai szoftverek terén van. Nemzetközi csapatokban dolgozom, különböző országokból származó mérnökökkel és szakértőkkel. Megbízható és rugalmas személyiség vagyok, egyaránt otthonosan mozgok csapatban és önállóan is, folyamatos problémamegoldási és tanulási igénnyel.',
 			p2: 'A szerepem a gyakorlati fejlesztésen túl egyre inkább a projekt napi szintű megvalósításának irányítása felé mozdul el — együttműködés más fejlesztői csapatokkal, technikai döntések prezentálása üzleti érdekelteknek, és AI-eszközök használata, hogy több feladatot vállaljak és gyorsabban haladjak. Azon dolgozom, hogy ezt egy teljes vezetői szerepkörré fejlesszem, ugyanezt az AI-gyorsított megközelítést alkalmazva nagyobb léptékben.',
 			languages: 'Nyelvek',
 			languageNames: ['Magyar', 'Angol', 'Német'],
@@ -338,7 +338,7 @@ export const translations: Record<Lang, Translation> = {
 		},
 		skills: {
 			label: '03 — Készségek',
-			headline: 'Az eszköztár, a kódtól a termelésig.',
+			headline: 'Az eszköztár, a kódtól az éles környezetig.',
 			core: 'Fő terület',
 			familiar: 'Ismerem',
 			certLabel: 'Tanúsítvány',
@@ -357,7 +357,7 @@ export const translations: Record<Lang, Translation> = {
 		},
 		experience: {
 			label: '04 — Tapasztalat',
-			headline: 'Ahol dolgokat építettem.',
+			headline: 'Ahol projekteken dolgoztam.',
 			entries: [
 				{
 					role: 'Szoftvermérnök',
@@ -450,7 +450,7 @@ export const translations: Record<Lang, Translation> = {
 		about: {
 			label: '01 — Über mich',
 			headline: 'Probleme lösen, schnell lernen, Verantwortung übernehmen.',
-			p1: 'Ich bin Softwareentwickler mit Erfahrung vor allem im Bereich Logistiksoftware für den Einzelhandel. Ich bin zuverlässig und flexibel, arbeite gerne im Team, aber genauso eigenständig, mit stetigem Fokus auf Problemlösung und das Erlernen neuer Technologien.',
+			p1: 'Ich bin Softwareentwickler mit Erfahrung vor allem im Bereich Logistiksoftware für den Einzelhandel. Ich arbeite in internationalen Teams mit Entwicklern und Fachleuten aus verschiedenen Ländern zusammen. Ich bin zuverlässig und flexibel, arbeite gerne im Team, aber genauso eigenständig, mit stetigem Fokus auf Problemlösung und das Erlernen neuer Technologien.',
 			p2: 'Meine Rolle entwickelt sich zunehmend über die praktische Entwicklungsarbeit hinaus hin zur Verantwortung für die tägliche Projektumsetzung — durch die Zusammenarbeit mit anderen Entwicklungsteams, die Präsentation technischer Entscheidungen vor Fachbereichs-Stakeholdern und den Einsatz von KI-Tools, um mehr Verantwortung zu übernehmen und schneller voranzukommen. Ich arbeite darauf hin, dies zu einer vollwertigen Führungsrolle auszubauen, mit demselben KI-gestützten Ansatz in größerem Maßstab.',
 			languages: 'Sprachen',
 			languageNames: ['Ungarisch', 'Englisch', 'Deutsch'],
